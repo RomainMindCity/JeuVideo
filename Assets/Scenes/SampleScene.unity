@@ -422,9 +422,9 @@ GameObject:
   - component: {fileID: 425012656}
   - component: {fileID: 425012655}
   - component: {fileID: 425012658}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Cube (4)
-  m_TagString: Wood
+  m_TagString: Ressources
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1195,9 +1195,9 @@ GameObject:
   - component: {fileID: 1216766000}
   - component: {fileID: 1216765999}
   - component: {fileID: 1216765998}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Cube (3)
-  m_TagString: Stone
+  m_TagString: Ressources
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,9 +1335,9 @@ GameObject:
   - component: {fileID: 1672762232}
   - component: {fileID: 1672762231}
   - component: {fileID: 1672762230}
-  m_Layer: 13
+  m_Layer: 20
   m_Name: Cube (2)
-  m_TagString: Wood
+  m_TagString: Ressources
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1657,6 +1657,7 @@ GameObject:
   - component: {fileID: 2061543941}
   - component: {fileID: 2061543942}
   - component: {fileID: 2061543943}
+  - component: {fileID: 2061543944}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1816,3 +1817,15 @@ MonoBehaviour:
   "P\xEAcheItem": 0
   "P\xEAcheToNextExperiance": 100
   "P\xEAcheTime": 5
+--- !u!114 &2061543944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061543938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a136559ecc4abf4098af95e1a570b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

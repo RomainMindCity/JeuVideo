@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wood
   - Stone
+  - Ressources
   layers:
   - Default
   - TransparentFX
@@ -13,26 +14,26 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
   - WhatIsGround
-  - FarmTier1
-  - FarmTier2
-  - FarmTier3
-  - FarmTier4
-  - FarmTier5
+  - 
+  - 
+  - 
+  - LootChest
   - 
   - 
   - 
   - 
+  - Arbrustre
+  - Wood
   - 
   - 
   - 
+  - Silex
+  - Rock
+  - Iron
   - 
   - 
-  - 
+  - Monster
   - 
   - 
   - 
