@@ -8,6 +8,7 @@ public class PlayerFarming : MonoBehaviour
 
     private bool isCollisioning = false;
     private bool isFarming = false;
+    private int CurrentCase;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +24,6 @@ public class PlayerFarming : MonoBehaviour
             isCollisioning = false;
         }
     } 
-    
     private void OnTriggerStay(Collider other)
     {
         if(isCollisioning)
@@ -32,7 +32,7 @@ public class PlayerFarming : MonoBehaviour
             switch(Layer)
             {
                 case 10:
-                    
+                    CurrentCase = Layer;
                     break;
                 case 11:
                     break;
@@ -71,22 +71,51 @@ public class PlayerFarming : MonoBehaviour
     }
     IEnumerator StartFarming(int CurrentCase)
     {
-        Debug.Log("Farming");
-        Debug.Log(CurrentCase);
-        yield return new WaitForSeconds(1);
+        if (10 <= CurrentCase && CurrentCase < 15)
+        {
+            //LootChest
+            LootChest(CurrentCase);
+        }
+        else if (15 <= CurrentCase && CurrentCase < 20)
+        {
+            //Lumberjack
+            LumberJack(CurrentCase);
+        }
+        else if (20 <= CurrentCase && CurrentCase < 25)
+        {
+            //Miner
+            Miner(CurrentCase);
+        }
+
+        yield return new WaitForSeconds(0.1f);
         isFarming = false;
     }
 
     void Update()
     {
-        if(isCollisioning && isFarming)
+        if(isCollisioning && !isFarming)
         {
-            int CurrentCase = 0;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                isFarming = true;
                 StartCoroutine(StartFarming(CurrentCase));
             }
         }
+    }
+
+    private void LootChest(int CurrentCase)
+    {
+        Debug.Log(CurrentCase);
+    }
+
+    private void LumberJack(int CurrentCase)
+    {
+        isFarming = true;
+        Debug.Log("LumberJack");
+    }
+
+    private void Miner(int CurrentCase)
+    {
+        isFarming = true;
+        Debug.Log("Miner");
     }
 }
