@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 425012656}
   - component: {fileID: 425012655}
   - component: {fileID: 425012658}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Cube (4)
   m_TagString: Ressources
   m_Icon: {fileID: 0}

@@ -71,11 +71,8 @@ public class PlayerFarm : MonoBehaviour
 
     void Start()
     {
-        PlayerSkills skills = new PlayerSkills();    }
-    private void OnCollisionEnter(Collision collision)
-    {   
+        PlayerSkills skills = new PlayerSkills();
     }
-
     public void AddExperience(int amount)
     {
         CurrentExperiance += amount;

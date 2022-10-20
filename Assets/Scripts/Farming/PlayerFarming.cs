@@ -1,12 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerFarming : MonoBehaviour
 {
+
+    private bool isCollisioning = false;
+    private bool isFarming = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Ressources")
+        {
+            isCollisioning = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Ressources")
+        {
+            isCollisioning = false;
+        }
+    } 
+    
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Ressources")
+        if(isCollisioning)
         {
             int Layer = other.gameObject.layer;
             switch(Layer)
@@ -42,20 +62,30 @@ public class PlayerFarming : MonoBehaviour
                     break;
                 case 24:
                     break;
-                case 25:
+                default:
+                    isCollisioning = false;
                     break;
-                case 26:
-                    break;
-                case 27:
-                    break;
-                case 28:
-                    break;
-                case 29:
-                    break;
-                case 30:
-                    break;
-                case 31:
-                    break;
+
+            }
+        }
+    }
+    IEnumerator StartFarming(int CurrentCase)
+    {
+        Debug.Log("Farming");
+        Debug.Log(CurrentCase);
+        yield return new WaitForSeconds(1);
+        isFarming = false;
+    }
+
+    void Update()
+    {
+        if(isCollisioning && isFarming)
+        {
+            int CurrentCase = 0;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                isFarming = true;
+                StartCoroutine(StartFarming(CurrentCase));
             }
         }
     }
