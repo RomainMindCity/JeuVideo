@@ -28,6 +28,8 @@ public class PlayerFarming : MonoBehaviour
     {
         if(isCollisioning)
         {
+            //Show "Press [E] to farm" in UI
+            Debug.Log(other.gameObject.layer);
             int Layer = other.gameObject.layer;
             switch(Layer)
             {
@@ -35,24 +37,34 @@ public class PlayerFarming : MonoBehaviour
                     CurrentCase = Layer;
                     break;
                 case 11:
+                    CurrentCase = Layer;
                     break;
                 case 12:
+                    CurrentCase = Layer;
                     break;
                 case 13:
+                    CurrentCase = Layer;
                     break;
                 case 14:
+                    CurrentCase = Layer;
                     break;
                 case 15:
+                    CurrentCase = Layer;
                     break;
                 case 16:
+                    CurrentCase = Layer;
                     break;
                 case 17:
+                    CurrentCase = Layer;
                     break;
                 case 18:
+                    CurrentCase = Layer;
                     break;
                 case 19:
+                    CurrentCase = Layer;
                     break;
                 case 20:
+                    CurrentCase = Layer;
                     break;
                 case 21:
                     break;
