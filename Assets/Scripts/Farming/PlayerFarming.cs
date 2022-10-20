@@ -67,12 +67,16 @@ public class PlayerFarming : MonoBehaviour
                     CurrentCase = Layer;
                     break;
                 case 21:
+                    CurrentCase = Layer;
                     break;
                 case 22:
+                    CurrentCase = Layer;
                     break;
                 case 23:
+                    CurrentCase = Layer;
                     break;
                 case 24:
+                    CurrentCase = Layer;
                     break;
                 default:
                     isCollisioning = false;
