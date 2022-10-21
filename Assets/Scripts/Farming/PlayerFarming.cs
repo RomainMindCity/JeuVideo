@@ -255,7 +255,24 @@ public class PlayerFarming : MonoBehaviour
 
     private void LootChest(int CurrentCase)
     {
-        Debug.Log("Looting");
+        switch (CurrentCase)
+        {
+            case 10:
+                Debug.Log("You looted a chest");
+                break;
+            case 11:
+                Debug.Log("You looted a chest");
+                break;
+            case 12:
+                Debug.Log("You looted a chest");
+                break;
+            case 13:
+                Debug.Log("You looted a chest");
+                break;
+            case 14:
+                Debug.Log("You looted a chest");
+                break;
+        }
     }
 
     private void LumberJack(int CurrentCase)
