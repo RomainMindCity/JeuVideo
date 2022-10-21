@@ -2158,9 +2158,8 @@ GameObject:
   - component: {fileID: 2061543939}
   - component: {fileID: 2061543940}
   - component: {fileID: 2061543941}
-  - component: {fileID: 2061543942}
-  - component: {fileID: 2061543943}
   - component: {fileID: 2061543944}
+  - component: {fileID: 2061543942}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2235,91 +2234,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2061543938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff294602295e3b14ab442ef412447304, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b1d945ad6665b947874100f2736e567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FarmAmount: 0
-  FarmingExperiance: 0
-  Level: 0
-  CurrentExperiance: 0
-  ExperianceToNextLevel: 100
-  isFarming: 0
-  FarmLevelTier1: 1
-  FarmLevelTier2: 10
-  FarmLevelTier3: 25
-  FarmLevelTier4: 35
-  FarmLevelTier5: 45
-  MaxFarmingExperianceTier1: 100
-  MinFarmingExperianceTier1: 1
-  MaxFarmingItemAmountTier1: 5
-  MinFarmingItemAmountTier1: 1
-  LevelToMinimumTier1: 10
-  FarmingtimeTier1: 5
-  MaxFarmingExperianceTier2: 200
-  MinFarmingExperianceTier2: 50
-  MaxFarmingItemAmountTier2: 10
-  MinFarmingItemAmountTier2: 6
-  LevelToMinimumTier2: 32
-  FarmingtimeTier2: 10
-  MaxFarmingExperianceTier3: 300
-  MinFarmingExperianceTier3: 100
-  MaxFarmingItemAmountTier3: 15
-  MinFarmingItemAmountTier3: 11
-  LevelToMinimumTier3: 42
-  FarmingtimeTier3: 15
-  MaxFarmingExperianceTier4: 400
-  MinFarmingExperianceTier4: 150
-  MaxFarmingItemAmountTier4: 20
-  MinFarmingItemAmountTier4: 16
-  LevelToMinimumTier4: 50
-  FarmingtimeTier4: 20
-  FarmingExperianceTier5: 500
-  MaxFarmingItemAmountTier5: 25
-  MinFarmingItemAmountTier5: 10
-  FarmingtimeTier5: 25
---- !u!114 &2061543943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061543938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52746ce27f179c045a41ec0f68a17b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFarming: 0
-  Bucheron: 0
-  Minage: 0
-  Combat: 0
-  Craft: 0
-  "P\xEAche": 0
-  BucheronLevel: 0
-  BucheronExperiance: 0
-  BucheronItem: 0
-  BucheronToNextExperiance: 100
-  BucheronTime: 5
-  MinageLevel: 0
-  MinageExperiance: 0
-  MinageItem: 0
-  MinageToNextExperiance: 100
-  MinageTime: 5
-  CombatLevel: 0
-  CombatExperiance: 0
-  CombatItem: 0
-  CombatToNextExperiance: 100
-  CombatTime: 5
-  CraftLevel: 0
-  CraftExperiance: 0
-  CraftItem: 0
-  CraftToNextExperiance: 100
-  CraftTime: 5
-  "P\xEAcheLevel": 0
-  "P\xEAcheExperiance": 0
-  "P\xEAcheItem": 0
-  "P\xEAcheToNextExperiance": 100
-  "P\xEAcheTime": 5
+  LumberJackLevel: 1
+  LumberJackCurrentExp: 0
+  LumberJackExpToNextLevel: 100
+  MinerLevel: 1
+  MinerCurrentExp: 0
+  MinerExpToNextLevel: 100
 --- !u!114 &2061543944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,3 +2255,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a136559ecc4abf4098af95e1a570b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFarming: 0

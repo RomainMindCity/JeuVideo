@@ -38,8 +38,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Crafting
+  - Smelting
   m_SortingLayers:
   - name: Default
     uniqueID: 0
