@@ -77,6 +77,12 @@ public class PlayerFarming : MonoBehaviour
                 case 24:
                     CurrentCase = Layer;
                     break;
+                case 30:
+                    CurrentCase = Layer;
+                    break;
+                case 31:
+                    CurrentCase = Layer;
+                    break;
                 default:
                     isCollisioning = false;
                     break;
@@ -93,34 +99,83 @@ public class PlayerFarming : MonoBehaviour
         }
         else if (15 <= CurrentCase && CurrentCase < 20)
         {
-            LumberJack(CurrentCase);
             switch (CurrentCase)
             {
                 case 15:
-                    yield return new WaitForSeconds(2f);
-                    isFarming = false;
+                    if (Level.LumberJackLevel >= 1 && Level.LumberJackLevel < 12)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(2f);
+                        LumberJack(CurrentCase);
+                        isFarming = false;
+                    }
                     break;
                 case 16:
-                    yield return new WaitForSeconds(3f);
-                    isFarming = false;
+                    if (Level.LumberJackLevel >= 10 && Level.LumberJackLevel < 22)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(3f);
+                        LumberJack(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 10 to farm this");
+                    }    
+                    
                     break;
                 case 17:
-                    yield return new WaitForSeconds(4f);
-                    isFarming = false;
+                    if (Level.LumberJackLevel >= 20 && Level.LumberJackLevel < 32)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(4f);
+                        LumberJack(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 20 to farm this");
+                    }
                     break;
                 case 18:
-                    yield return new WaitForSeconds(5f);
-                    isFarming = false;
+                    if (Level.LumberJackLevel >= 30 && Level.LumberJackLevel < 42)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(5f);
+                        LumberJack(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 30 to farm this");
+                    }
                     break;
                 case 19:
-                    yield return new WaitForSeconds(7.5f);
-                    isFarming = false;
+                    if (Level.LumberJackLevel >= 40 && Level.LumberJackLevel < 51)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(7.5f);
+                        LumberJack(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 40 to farm this");
+                    }
                     break;
             }
         }
         else if (20 <= CurrentCase && CurrentCase < 25)
         {
             Miner(CurrentCase);
+        }
+        else if (CurrentCase == 30)
+        {
+            Crafting(CurrentCase);
+        }
+        else if (CurrentCase == 31)
+        {
+            Smelting(CurrentCase);
         }
     }
 
@@ -142,63 +197,23 @@ public class PlayerFarming : MonoBehaviour
 
     private void LumberJack(int CurrentCase)
     {
-        isFarming = true;
         LevelingSystem Level = GetComponent<LevelingSystem>();
         switch (CurrentCase)
         {
             case 15:
-                if (Level.LumberJackLevel >= 1 && Level.LumberJackLevel < 12)
-                {
-                    Level.LumberJackCurrentExp += Random.Range(10, 51);
-                }
+                Level.LumberJackCurrentExp += Random.Range(10, 51);
                 break;
             case 16:
-                if (Level.LumberJackLevel >= 10 && Level.LumberJackLevel < 22)
-                {
-                    Level.LumberJackCurrentExp += Random.Range(25, 76);
-                    isFarming = false;
-
-                }
-                else
-                {
-                    Debug.Log("You need to be level 10 to farm this");
-                }
+                Level.LumberJackCurrentExp += Random.Range(25, 76);
                 break;
             case 17:
-                if (Level.LumberJackLevel >= 20 && Level.LumberJackLevel < 32)
-                {
-                    Level.LumberJackCurrentExp += Random.Range(50, 101);
-                    isFarming = false;
-
-                }
-                else
-                {
-                    Debug.Log("You need to be level 20 to farm this");
-                }
+                Level.LumberJackCurrentExp += Random.Range(50, 101);
                 break;
             case 18:
-                if (Level.LumberJackLevel >= 30 && Level.LumberJackLevel < 42)
-                {
-                    Level.LumberJackCurrentExp += Random.Range(75, 151);
-                    isFarming = false;
-
-                }
-                else
-                {
-                    Debug.Log("You need to be level 30 to farm this");
-                }
+                Level.LumberJackCurrentExp += Random.Range(75, 151);
                 break;
             case 19:
-                if (Level.LumberJackLevel >= 40 && Level.LumberJackLevel < 51)
-                {
-                    Level.LumberJackCurrentExp += Random.Range(100, 201);
-                    isFarming = false;
-
-                }
-                else
-                {
-                    Debug.Log("You need to be level 40 to farm this");
-                }
+                 Level.LumberJackCurrentExp += Random.Range(100, 201);
                 break;
         }
 
@@ -214,5 +229,15 @@ public class PlayerFarming : MonoBehaviour
     {
         isFarming = true;
         Debug.Log("Miner");
+    }
+
+    private void Crafting(int recipie)
+    {
+        Debug.Log("Crafting");
+    }
+
+    private void Smelting(int recipie)
+    {
+        Debug.Log("Smelting");
     }
 }
