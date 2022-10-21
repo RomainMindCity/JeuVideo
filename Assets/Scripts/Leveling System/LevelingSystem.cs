@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LevelingSystem : MonoBehaviour
 {
-
-    [Header("Leveling System")]
     [Header("LumberJack")]
     public int LumberJackLevel = 1;
     public int LumberJackCurrentExp = 0;
@@ -14,6 +12,14 @@ public class LevelingSystem : MonoBehaviour
     public int MinerLevel = 1;
     public int MinerCurrentExp = 0;
     public int MinerExpToNextLevel = 100;
+    [Header("Crafting")]
+    public int CraftingLevel = 1;
+    public int CraftingCurrentExp = 0;
+    public int CraftingExpToNextLevel = 100;
+    [Header("Smelting")]
+    public int SmeltingLevel = 1;
+    public int SmeltingCurrentExp = 0;
+    public int SmeltingExpToNextLevel = 100;
 
     // Start is called before the first frame update
     void Start()

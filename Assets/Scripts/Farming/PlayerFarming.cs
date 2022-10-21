@@ -167,7 +167,70 @@ public class PlayerFarming : MonoBehaviour
         }
         else if (20 <= CurrentCase && CurrentCase < 25)
         {
-            Miner(CurrentCase);
+            switch (CurrentCase)
+            {
+                case 20:
+                    if (Level.MinerLevel >= 1 && Level.MinerLevel < 12)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(2f);
+                        Miner(CurrentCase);
+                        isFarming = false;
+                    }
+                    break;
+                case 21:
+                    if (Level.MinerLevel >= 10 && Level.MinerLevel < 22)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(3f);
+                        Miner(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 10 to farm this");
+                    }
+                    break;
+                case 22:
+                    if (Level.MinerLevel >= 20 && Level.MinerLevel < 32)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(4f);
+                        Miner(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 20 to farm this");
+                    }
+                    break;
+                case 23:
+                    if (Level.MinerLevel >= 30 && Level.MinerLevel < 42)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(5f);
+                        Miner(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 30 to farm this");
+                    }
+                    break;
+                case 24:
+                    if (Level.MinerLevel >= 40 && Level.MinerLevel < 51)
+                    {
+                        isFarming = true;
+                        yield return new WaitForSeconds(7.5f);
+                        Miner(CurrentCase);
+                        isFarming = false;
+                    }
+                    else
+                    {
+                        Debug.Log("You need to be level 40 to farm this");
+                    }
+                    break;
+            }
         }
         else if (CurrentCase == 30)
         {
@@ -192,7 +255,7 @@ public class PlayerFarming : MonoBehaviour
 
     private void LootChest(int CurrentCase)
     {
-        Debug.Log(CurrentCase);
+        Debug.Log("Looting");
     }
 
     private void LumberJack(int CurrentCase)
@@ -221,14 +284,38 @@ public class PlayerFarming : MonoBehaviour
         {
             Level.LumberJackLevel++;
             Level.LumberJackCurrentExp = 0;
-            Level.LumberJackExpToNextLevel += (int)(Level.LumberJackExpToNextLevel * 1.2f);
+            Level.LumberJackExpToNextLevel = (int)(Level.LumberJackExpToNextLevel * 1.2f);
         }
     }
 
     private void Miner(int CurrentCase)
     {
-        isFarming = true;
-        Debug.Log("Miner");
+        LevelingSystem Level = GetComponent<LevelingSystem>();
+        switch (CurrentCase)
+        {
+            case 20:
+                Level.MinerCurrentExp += Random.Range(10, 51);
+                break;
+            case 21:
+                Level.MinerCurrentExp += Random.Range(25, 76);
+                break;
+            case 22:
+                Level.MinerCurrentExp += Random.Range(50, 101);
+                break;
+            case 23:
+                Level.MinerCurrentExp += Random.Range(75, 151);
+                break;
+            case 24:
+                Level.MinerCurrentExp += Random.Range(100, 201);
+                break;
+        }
+
+        if (Level.MinerCurrentExp > Level.MinerExpToNextLevel)
+        {
+            Level.MinerLevel++;
+            Level.MinerCurrentExp = 0;
+            Level.MinerExpToNextLevel = (int)(Level.MinerExpToNextLevel * 1.2f);
+        }
     }
 
     private void Crafting(int recipie)
