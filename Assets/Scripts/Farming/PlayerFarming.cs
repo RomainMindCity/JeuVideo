@@ -30,64 +30,7 @@ public class PlayerFarming : MonoBehaviour
         {
             //Show "Press [E] to farm" in UI
             int Layer = other.gameObject.layer;
-            switch(Layer)
-            {
-                case 10:
-                    CurrentCase = Layer;
-                    break;
-                case 11:
-                    CurrentCase = Layer;
-                    break;
-                case 12:
-                    CurrentCase = Layer;
-                    break;
-                case 13:
-                    CurrentCase = Layer;
-                    break;
-                case 14:
-                    CurrentCase = Layer;
-                    break;
-                case 15:
-                    CurrentCase = Layer;
-                    break;
-                case 16:
-                    CurrentCase = Layer;
-                    break;
-                case 17:
-                    CurrentCase = Layer;
-                    break;
-                case 18:
-                    CurrentCase = Layer;
-                    break;
-                case 19:
-                    CurrentCase = Layer;
-                    break;
-                case 20:
-                    CurrentCase = Layer;
-                    break;
-                case 21:
-                    CurrentCase = Layer;
-                    break;
-                case 22:
-                    CurrentCase = Layer;
-                    break;
-                case 23:
-                    CurrentCase = Layer;
-                    break;
-                case 24:
-                    CurrentCase = Layer;
-                    break;
-                case 30:
-                    CurrentCase = Layer;
-                    break;
-                case 31:
-                    CurrentCase = Layer;
-                    break;
-                default:
-                    isCollisioning = false;
-                    break;
-
-            }
+            CurrentCase = Layer;
         }
     }
     IEnumerator StartFarming(int CurrentCase)
@@ -277,6 +220,7 @@ public class PlayerFarming : MonoBehaviour
 
     private void LumberJack(int CurrentCase)
     {
+        UserInterface UI = GameObject.Find("UserInterface").GetComponent<UserInterface>();
         LevelingSystem Level = GetComponent<LevelingSystem>();
         switch (CurrentCase)
         {
@@ -300,13 +244,15 @@ public class PlayerFarming : MonoBehaviour
         if (Level.LumberJackCurrentExp > Level.LumberJackExpToNextLevel)
         {
             Level.LumberJackLevel++;
-            Level.LumberJackCurrentExp = 0;
+            Level.LumberJackCurrentExp = Level.LumberJackCurrentExp - Level.LumberJackExpToNextLevel;
             Level.LumberJackExpToNextLevel = (int)(Level.LumberJackExpToNextLevel * 1.2f);
         }
+        UI.UpdateSlider(Level.LumberJackExpToNextLevel, Level.LumberJackCurrentExp, "LumberJack" + " " + Level.LumberJackLevel);
     }
-
+    
     private void Miner(int CurrentCase)
     {
+        UserInterface UI = GameObject.Find("UserInterface").GetComponent<UserInterface>();
         LevelingSystem Level = GetComponent<LevelingSystem>();
         switch (CurrentCase)
         {
@@ -330,9 +276,10 @@ public class PlayerFarming : MonoBehaviour
         if (Level.MinerCurrentExp > Level.MinerExpToNextLevel)
         {
             Level.MinerLevel++;
-            Level.MinerCurrentExp = 0;
+            Level.MinerCurrentExp = Level.MinerCurrentExp - Level.MinerExpToNextLevel;
             Level.MinerExpToNextLevel = (int)(Level.MinerExpToNextLevel * 1.2f);
         }
+        UI.UpdateSlider(Level.MinerExpToNextLevel, Level.MinerCurrentExp, "Miner" + " " + Level.MinerLevel);
     }
 
     private void Crafting(int recipie)
