@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class PlayerFarming : MonoBehaviour
 {
-
+    public GameObject InventoryCrafting;
+    public GameObject Inventory;
+    public GameObject InventoryText;
+    public GameObject InventoryPlayer;
+    public GameObject InventorySlotItem;
+    
     private bool isCollisioning = false;
     public bool isFarming = false;
     private int CurrentCase;
+    private bool crafting;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -178,6 +184,7 @@ public class PlayerFarming : MonoBehaviour
         else if (CurrentCase == 30)
         {
             Crafting(CurrentCase);
+            crafting = !crafting;
         }
         else if (CurrentCase == 31)
         {
@@ -283,8 +290,8 @@ public class PlayerFarming : MonoBehaviour
     }
 
     private void Crafting(int recipie)
-    {
-        Debug.Log("Crafting");
+    {      
+
     }
 
     private void Smelting(int recipie)
