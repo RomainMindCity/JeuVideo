@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 0
   Name: Bois
   Icon: {fileID: 0}
+  rarity: 3
   maxStack: 100
-  weight: 0

@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
 
     public GameObject Inventory;
+    public bool playerRenderer = false;
     
     void Update()
     {
@@ -21,6 +22,9 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             Inventory.SetActive(!Inventory.activeSelf);
+            Cursor.visible = !Cursor.visible;
+            Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
+            
         }
     }
 }

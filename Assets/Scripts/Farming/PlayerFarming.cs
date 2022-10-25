@@ -4,17 +4,15 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerFarming : MonoBehaviour
-{
-    public GameObject InventoryCrafting;
-    public GameObject Inventory;
-    public GameObject InventoryText;
-    public GameObject InventoryPlayer;
-    public GameObject InventorySlotItem;
-    
+{    
     private bool isCollisioning = false;
     public bool isFarming = false;
     private int CurrentCase;
     private bool crafting;
+
+    public InventoryManager manager;
+
+    public GameObject[] item;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -232,19 +230,39 @@ public class PlayerFarming : MonoBehaviour
         switch (CurrentCase)
         {
             case 15:
-                Level.LumberJackCurrentExp += Random.Range(10, 51);
+                Level.LumberJackCurrentExp += Random.Range(10, 51); 
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 16:
                 Level.LumberJackCurrentExp += Random.Range(25, 76);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 17:
                 Level.LumberJackCurrentExp += Random.Range(50, 101);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 18:
                 Level.LumberJackCurrentExp += Random.Range(75, 151);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 19:
                  Level.LumberJackCurrentExp += Random.Range(100, 201);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
         }
 
@@ -255,6 +273,7 @@ public class PlayerFarming : MonoBehaviour
             Level.LumberJackExpToNextLevel = (int)(Level.LumberJackExpToNextLevel * 1.2f);
         }
         UI.UpdateSlider(Level.LumberJackExpToNextLevel, Level.LumberJackCurrentExp, "LumberJack" + " " + Level.LumberJackLevel);
+        
     }
     
     private void Miner(int CurrentCase)
@@ -265,18 +284,38 @@ public class PlayerFarming : MonoBehaviour
         {
             case 20:
                 Level.MinerCurrentExp += Random.Range(10, 51);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 21:
                 Level.MinerCurrentExp += Random.Range(25, 76);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 22:
                 Level.MinerCurrentExp += Random.Range(50, 101);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 23:
                 Level.MinerCurrentExp += Random.Range(75, 151);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
             case 24:
                 Level.MinerCurrentExp += Random.Range(100, 201);
+                for (int i = 0; i < Random.Range(1, 5); i++)
+                {
+                    manager.AddItem(item[0]);
+                }
                 break;
         }
 

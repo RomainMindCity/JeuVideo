@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1632237836572136962}
   - component: {fileID: 6749103437868303110}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Bois
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,10 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2acd28e490880b4c9d9856dbce43b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 24a89a7527b4a644c9939929a531069d, type: 2}
+  itemData: {fileID: 11400000, guid: 317a1275cae28804e8c64b00bd42d31f, type: 2}
   AmountText: {fileID: 4102612980416848100}
   Amount: 1
-  ID: 0
+  ID: 1
 --- !u!1 &5556998489194450718
 GameObject:
   m_ObjectHideFlags: 0

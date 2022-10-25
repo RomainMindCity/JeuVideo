@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory & Management")]
     public GameObject Inventory;
+    public GameObject CraftInventory;
 
     public Transform InventorySlotHolder;
     public Transform InventoryHotBarHolder;
@@ -27,7 +28,6 @@ public class InventoryManager : MonoBehaviour
 
 
     public GameObject ItemToAdd;
-    public int AmountToAdd;
 
 
     private void Start()
@@ -49,6 +49,11 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Cursor.gameObject.SetActive(false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            CraftInventory.SetActive(!CraftInventory.activeSelf);
         }
     }
     void InitializeInventory()
@@ -128,9 +133,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
-    void AddItem(GameObject item)
+    public void AddItem(GameObject item)
     {
-        for (int x = 0; x < slots.Count; x++)
+        for (int x = 0; x < slots.Count - hotBarSlots.Count; x++)
         {
             if (isFull[x] == false)
             {
